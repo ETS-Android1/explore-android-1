@@ -15,9 +15,9 @@ public class LslPacketSubscriber extends Thread {
   static LslLoader.StreamOutlet lslStreamOutletOrn;
   static LslLoader.StreamOutlet lslStreamOutletMarker;
   static LslLoader lslLoader = new LslLoader();
-  private LslLoader.StreamInfo lslStreamInfoExg;
-  private LslLoader.StreamInfo lslStreamInfoOrn;
-  private LslLoader.StreamInfo lslStreamInfoMarker;
+  private StreamInfo lslStreamInfoExg;
+  private StreamInfo lslStreamInfoOrn;
+  private StreamInfo lslStreamInfoMarker;
 
   @Override
   public void run() {
@@ -62,7 +62,7 @@ public class LslPacketSubscriber extends Thread {
               "ExG",
               packet.getDataCount(),
               250,
-              LslLoader.ChannelFormat.float32,
+              ChannelFormat.float32,
               "ExG");
       if (lslStreamInfoExg != null) {
         try {
